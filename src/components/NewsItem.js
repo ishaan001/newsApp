@@ -4,11 +4,11 @@ import newsImg from "../images/news.jpg"
 export class NewsItem extends Component {
   constructor() {
     super();
-    this.state = {error: false };
+    this.state = { error: false };
   }
 
   handleImageError() {
-    this.setState({error: true });
+    this.setState({ error: true });
   }
 
   render() {
@@ -26,12 +26,12 @@ export class NewsItem extends Component {
           <div className="card-body">
             <h5 className="card-title">{newsItemDescription.title ? newsItemDescription.title : " "}</h5>
             <p className="card-text">{newsItemDescription.description ? newsItemDescription.description.slice(0, 100) : " "}...</p>
-            <p className="card-text"><small className="text-body-secondary"> by {newsItemDescription.author ? newsItemDescription.author : "anonymous"} on : {newsItemDescription.publishedAt ? new Date(newsItemDescription.publishedAt).toGMTString() : " "}</small></p>
+            <p className="card-text"><small className="text-danger"> by {newsItemDescription.author ? newsItemDescription.author : "anonymous"} on : {newsItemDescription.publishedAt ? new Date(newsItemDescription.publishedAt).toGMTString() : " "}</small></p>
             <a
               href={newsItemDescription.url}
               target="_blank"
               rel="noreferrer"
-              /*_blank is used as on clicking the link it will open new tab*/ 
+              /*_blank is used as on clicking the link it will open new tab*/
               className="btn btn-sm btn-dark"
             >
               Read More
