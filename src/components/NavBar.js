@@ -38,13 +38,13 @@ export class NavBar extends Component {
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Country</a>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/" onClick={() => this.props.country("in")}>India</a></li>
-                  <li><a className="dropdown-item" href="/" onClick={() => this.props.country("us")} >USA</a></li>
-                  <li><a className="dropdown-item" href="/" onClick={() => this.props.country("de")} >UK</a></li>
-                  <li><a className="dropdown-item" href="/" onClick={() => this.props.country("gb")} >GERMANY</a></li>
+                  <li><a className="dropdown-item" href="/" onClick={() => {this.props.setCountryCode("in")}}>India</a></li>
+                  <li><a className="dropdown-item" href="/" onClick={() => {this.props.setCountryCode("de")}} >UK</a></li>
+                  <li><a className="dropdown-item" href="/" onClick={() => {this.props.setCountryCode("us")}} >USA</a></li>
+                  <li><a className="dropdown-item" href="/" onClick={() => {this.props.setCountryCode("gb")}} >GERMANY</a></li>
                 </ul>
               </li>
-            </div>
+            </div>  
           </div>
         </nav>
       </div>
