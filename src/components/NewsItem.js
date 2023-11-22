@@ -1,25 +1,24 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 import newsImg from "../images/news.jpg"
 
-export class NewsItem extends Component {
-  constructor() {
-    super();
-    this.state = { error: false };
+const NewsItem = (props) => {
+   
+  const [error, setError] = useState(false);
+   
+
+  const handleImageError = () => {
+    setError(true);
   }
 
-  handleImageError() {
-    this.setState({ error: true });
-  }
 
-  render() {
-    let { newsItemDescription } = this.props;
+    let { newsItemDescription } = props;
     return (
       <div className="my-3">
         <div className="card">
           <span className="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">{newsItemDescription.source.name}</span>
           <img
-            src={!this.state.error ? (newsItemDescription.urlToImage ? newsItemDescription.urlToImage : newsImg) : newsImg}
-            onError={this.handleImageError.bind(this)}
+            src={!error ? (newsItemDescription.urlToImage ? newsItemDescription.urlToImage : newsImg) : newsImg}
+            onError={handleImageError}
             className="card-img-top"
             alt="..."
           />
@@ -40,7 +39,7 @@ export class NewsItem extends Component {
         </div>
       </div>
     );
-  }
+
 }
 
 export default NewsItem;
