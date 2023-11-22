@@ -7,13 +7,10 @@ const News = (props) => {
   const[article, setArticle] = useState([])
   const[page, setPage] = useState(1)
   const[totalResult, setTotalResult] = useState(0)
-
   
   const capatalizeFirstLetter = (word) => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }
-
-  document.title = `${capatalizeFirstLetter(props.category)} - NewsMonkey`
 
   const updateNews = async() => {
     props.setProgress(10)
@@ -31,6 +28,7 @@ const News = (props) => {
 }
 
   useEffect(() => {
+    document.title = `${capatalizeFirstLetter(props.category)} - NewsMonkey`
     updateNews();
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
   
